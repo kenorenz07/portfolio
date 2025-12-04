@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Code, Smartphone, Database, Cloud } from 'lucide-react';
-import Link from 'next/link';
-import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
-import Badge from '@/components/ui/Badge';
-import { personalInfo, projects, skills } from '@/data/portfolio-data';
+import Badge from "@/components/ui/Badge";
+import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
+import { personalInfo, projects, skills } from "@/data/portfolio-data";
+import { motion } from "framer-motion";
+import { ArrowRight, Cloud, Code, Database, Smartphone } from "lucide-react";
+import Link from "next/link";
 
 export default function HomePage() {
-  const featuredProjects = projects.filter(p => p.featured);
-  const skillCategories = ['Frontend', 'Backend', 'Mobile', 'Cloud'] as const;
+  const featuredProjects = projects.filter((p) => p.featured);
+  const skillCategories = ["Frontend", "Backend", "Mobile", "Cloud"] as const;
 
   return (
     <div className="min-h-screen">
@@ -19,7 +19,10 @@ export default function HomePage() {
         {/* Animated background */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary-400/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+          <div
+            className="absolute bottom-20 right-10 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-float"
+            style={{ animationDelay: "1s" }}
+          />
         </div>
 
         <div className="container mx-auto px-4">
@@ -40,7 +43,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Hi, I'm{' '}
+              Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 bg-clip-text text-transparent">
                 {personalInfo.name}
               </span>
@@ -90,10 +93,13 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: 'Years Experience', value: personalInfo.yearsOfExperience },
-              { label: 'Projects Completed', value: '50+' },
-              { label: 'Happy Clients', value: '30+' },
-              { label: 'Technologies', value: skills.length + '+' },
+              {
+                label: "Years Experience",
+                value: personalInfo.yearsOfExperience,
+              },
+              { label: "Projects Completed", value: "50+" },
+              { label: "Happy Clients", value: "30+" },
+              { label: "Technologies", value: skills.length + "+" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -106,7 +112,9 @@ export default function HomePage() {
                 <div className="text-4xl md:text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
+                <div className="text-gray-600 dark:text-gray-400">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -132,14 +140,16 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Code, title: 'Frontend', color: 'text-blue-500' },
-              { icon: Database, title: 'Backend', color: 'text-green-500' },
-              { icon: Smartphone, title: 'Mobile', color: 'text-purple-500' },
-              { icon: Cloud, title: 'Cloud', color: 'text-orange-500' },
+              { icon: Code, title: "Frontend", color: "text-blue-500" },
+              { icon: Database, title: "Backend", color: "text-green-500" },
+              { icon: Smartphone, title: "Mobile", color: "text-purple-500" },
+              { icon: Cloud, title: "Cloud", color: "text-orange-500" },
             ].map((category, index) => {
               const Icon = category.icon;
-              const categorySkills = skills.filter(s => s.category === category.title);
-              
+              const categorySkills = skills.filter(
+                (s) => s.category === category.title
+              );
+
               return (
                 <Card key={category.title} glassmorphism>
                   <motion.div
@@ -153,7 +163,7 @@ export default function HomePage() {
                       {category.title}
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {categorySkills.slice(0, 4).map(skill => (
+                      {categorySkills.slice(0, 4).map((skill) => (
                         <Badge key={skill.name} size="sm">
                           {skill.name}
                         </Badge>
@@ -221,7 +231,7 @@ export default function HomePage() {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 3).map(tech => (
+                    {project.technologies.slice(0, 3).map((tech) => (
                       <Badge key={tech} size="sm">
                         {tech}
                       </Badge>
@@ -262,10 +272,11 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                Let's Work Together
+                Let&apos;s Work Together
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-                Have a project in mind? Let's discuss how I can help bring your ideas to life.
+                Have a project in mind? Let&apos;s discuss how I can help bring
+                your ideas to life.
               </p>
               <Link href="/contact">
                 <Button size="lg">
