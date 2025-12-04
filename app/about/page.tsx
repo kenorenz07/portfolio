@@ -60,18 +60,18 @@ export default function AboutPage() {
               <div className="space-y-4 text-gray-600 dark:text-gray-400">
                 <p>
                   With over {personalInfo.yearsOfExperience} years of professional experience in web and mobile 
-                  development, I've had the privilege of working with diverse teams and clients to bring 
+                  development, I&apos;ve had the privilege of working with diverse teams and clients to bring 
                   innovative digital solutions to life.
                 </p>
                 <p>
                   My expertise spans across the entire development stack, from building responsive 
                   frontend interfaces with React and Vue.js to architecting robust backend systems 
-                  with Laravel and Node.js. I'm particularly passionate about creating seamless user 
+                  with Laravel and Node.js. I&apos;m particularly passionate about creating seamless user 
                   experiences and writing clean, maintainable code.
                 </p>
                 <p>
                   I thrive in collaborative environments and enjoy tackling complex technical 
-                  challenges. Whether it's optimizing database performance, implementing GraphQL 
+                  challenges. Whether it&apos;s optimizing database performance, implementing GraphQL 
                   APIs, or building cross-platform mobile applications, I bring dedication and 
                   expertise to every project.
                 </p>

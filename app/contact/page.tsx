@@ -162,7 +162,7 @@ export default function ContactPage() {
                   </h4>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">
-                  I'm currently available for freelance work and new
+                  I&apos;m currently available for freelance work and new
                   opportunities. Feel free to reach out!
                 </p>
               </Card>
@@ -263,7 +263,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg text-green-700 dark:text-green-400"
                   >
-                    Thank you for your message! I'll get back to you soon.
+                    Thank you for your message! I&apos;ll get back to you soon.
                   </motion.div>
                 )}
 
