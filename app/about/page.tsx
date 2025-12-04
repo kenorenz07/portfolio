@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award } from 'lucide-react';
-import SectionHeader from '@/components/ui/SectionHeader';
-import Card from '@/components/ui/Card';
-import Badge from '@/components/ui/Badge';
-import { personalInfo, experiences, skills } from '@/data/portfolio-data';
+import Badge from "@/components/ui/Badge";
+import Card from "@/components/ui/Card";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { experiences, personalInfo, skills } from "@/data/portfolio-data";
+import { motion } from "framer-motion";
+import { Award, Briefcase } from "lucide-react";
 
 export default function AboutPage() {
   const skillsByCategory = {
-    Frontend: skills.filter(s => s.category === 'Frontend'),
-    Backend: skills.filter(s => s.category === 'Backend'),
-    Mobile: skills.filter(s => s.category === 'Mobile'),
-    Cloud: skills.filter(s => s.category === 'Cloud'),
-    Tools: skills.filter(s => s.category === 'Tools'),
+    Frontend: skills.filter((s) => s.category === "Frontend"),
+    Backend: skills.filter((s) => s.category === "Backend"),
+    Mobile: skills.filter((s) => s.category === "Mobile"),
+    Cloud: skills.filter((s) => s.category === "Cloud"),
+    Tools: skills.filter((s) => s.category === "Tools"),
   };
 
   return (
@@ -21,8 +21,8 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         {/* About Section */}
         <section className="mb-20">
-          <SectionHeader 
-            title="About Me" 
+          <SectionHeader
+            title="About Me"
             subtitle="Get to know more about my journey and expertise"
           />
 
@@ -39,9 +39,14 @@ export default function AboutPage() {
                   <div className="aspect-square bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center text-white">
                     <div className="text-center">
                       <div className="text-8xl font-bold mb-2">
-                        {personalInfo.name.split(' ').map(n => n[0]).join('')}
+                        {personalInfo.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
                       </div>
-                      <div className="text-2xl font-medium">{personalInfo.role}</div>
+                      <div className="text-2xl font-medium">
+                        {personalInfo.role}
+                      </div>
                     </div>
                   </div>
                 </Card>
@@ -59,20 +64,24 @@ export default function AboutPage() {
               </h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-400">
                 <p>
-                  With over {personalInfo.yearsOfExperience} years of professional experience in web and mobile 
-                  development, I&apos;ve had the privilege of working with diverse teams and clients to bring 
-                  innovative digital solutions to life.
+                  With over {personalInfo.yearsOfExperience} years of
+                  professional experience in web and mobile development,
+                  I&apos;ve had the privilege of working with diverse teams and
+                  clients to bring innovative digital solutions to life.
                 </p>
                 <p>
-                  My expertise spans across the entire development stack, from building responsive 
-                  frontend interfaces with React and Vue.js to architecting robust backend systems 
-                  with Laravel and Node.js. I&apos;m particularly passionate about creating seamless user 
-                  experiences and writing clean, maintainable code.
+                  My expertise spans across the entire development stack, from
+                  building responsive frontend interfaces with React and Vue.js
+                  to architecting robust backend systems with Laravel and
+                  Node.js. I&apos;m particularly passionate about creating
+                  seamless user experiences and writing clean, maintainable
+                  code.
                 </p>
                 <p>
-                  I thrive in collaborative environments and enjoy tackling complex technical 
-                  challenges. Whether it&apos;s optimizing database performance, implementing GraphQL 
-                  APIs, or building cross-platform mobile applications, I bring dedication and 
+                  I thrive in collaborative environments and enjoy tackling
+                  complex technical challenges. Whether it&apos;s optimizing
+                  database performance, implementing GraphQL APIs, or building
+                  cross-platform mobile applications, I bring dedication and
                   expertise to every project.
                 </p>
               </div>
@@ -82,11 +91,17 @@ export default function AboutPage() {
                   <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">
                     {personalInfo.yearsOfExperience}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Years Experience
+                  </div>
                 </div>
                 <div className="p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
-                  <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">50+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
+                  <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">
+                    50+
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Projects Completed
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -95,8 +110,8 @@ export default function AboutPage() {
 
         {/* Experience Timeline */}
         <section className="mb-20">
-          <SectionHeader 
-            title="Work Experience" 
+          <SectionHeader
+            title="Work Experience"
             subtitle="My professional journey"
           />
 
@@ -137,7 +152,10 @@ export default function AboutPage() {
 
                       <ul className="space-y-2 mb-4">
                         {exp.description.map((desc, i) => (
-                          <li key={i} className="text-gray-600 dark:text-gray-400 flex items-start">
+                          <li
+                            key={i}
+                            className="text-gray-600 dark:text-gray-400 flex items-start"
+                          >
                             <span className="text-primary-500 mr-2">▹</span>
                             <span>{desc}</span>
                           </li>
@@ -145,7 +163,7 @@ export default function AboutPage() {
                       </ul>
 
                       <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map(tech => (
+                        {exp.technologies.map((tech) => (
                           <Badge key={tech} size="sm">
                             {tech}
                           </Badge>
@@ -161,35 +179,37 @@ export default function AboutPage() {
 
         {/* Skills Section */}
         <section>
-          <SectionHeader 
-            title="Technical Skills" 
+          <SectionHeader
+            title="Technical Skills"
             subtitle="Technologies and tools I work with"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(skillsByCategory).map(([category, categorySkills], index) => (
-              <motion.div
-                key={category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
-                    <Award className="text-primary-500" size={24} />
-                    {category}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {categorySkills.map(skill => (
-                      <Badge key={skill.name} variant="default">
-                        {skill.name}
-                      </Badge>
-                    ))}
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
+            {Object.entries(skillsByCategory).map(
+              ([category, categorySkills], index) => (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card>
+                    <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                      <Award className="text-primary-500" size={24} />
+                      {category}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {categorySkills.map((skill) => (
+                        <Badge key={skill.name} variant="default">
+                          {skill.name}
+                        </Badge>
+                      ))}
+                    </div>
+                  </Card>
+                </motion.div>
+              )
+            )}
           </div>
         </section>
       </div>
